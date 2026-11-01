@@ -122,18 +122,18 @@ function Menu.LoadBannerTexture(url)
 end
 
 Menu.Colors = {
-    HeaderPink = { r = 148, g = 0, b = 211 },
-    SelectedBg = { r = 148, g = 0, b = 211 },
+    HeaderPink = { r = 0, g = 120, b = 255 },
+    SelectedBg = { r = 0, g = 120, b = 255 },
     TextWhite = { r = 255, g = 255, b = 255 },
     BackgroundDark = { r = 0, g = 0, b = 0 },
     FooterBlack = { r = 0, g = 0, b = 0 }
 }
 
-Menu.CurrentTheme = "Purple"
+Menu.CurrentTheme = "Blue"
 
 function Menu.ApplyTheme(themeName)
     if not themeName or type(themeName) ~= "string" then
-        themeName = "Purple"
+        themeName = "Blue"
     end
     
 
@@ -161,10 +161,10 @@ function Menu.ApplyTheme(themeName)
         Menu.Banner.imageUrl = "https://www.image2url.com/r2/default/images/1790674994406-c608b4ff-ca85-4c85-a7e9-4c2dae03a8e3.png"
         Menu.CurrentTheme = "pink"
     else
-        Menu.Colors.HeaderPink = { r = 148, g = 0, b = 211 }
-        Menu.Colors.SelectedBg = { r = 148, g = 0, b = 211 }
+        Menu.Colors.HeaderPink = { r = 0, g = 120, b = 255 }
+        Menu.Colors.SelectedBg = { r = 0, g = 120, b = 255 }
         Menu.Banner.imageUrl = "https://www.image2url.com/r2/default/images/1790674994406-c608b4ff-ca85-4c85-a7e9-4c2dae03a8e3.png"
-        Menu.CurrentTheme = "Purple"
+        Menu.CurrentTheme = "Blue"
     end
 
     if Menu.Banner.enabled and Menu.Banner.imageUrl then
@@ -1848,9 +1848,9 @@ function Menu.DrawBackground()
     
     local segments, fullHeight = Menu.GetLayoutSegments()
 
-    local r = (Menu.Colors.SelectedBg and Menu.Colors.SelectedBg.r) or 148
+    local r = (Menu.Colors.SelectedBg and Menu.Colors.SelectedBg.r) or 0
     local g = (Menu.Colors.SelectedBg and Menu.Colors.SelectedBg.g) or 0
-    local b = (Menu.Colors.SelectedBg and Menu.Colors.SelectedBg.b) or 211
+    local b = (Menu.Colors.SelectedBg and Menu.Colors.SelectedBg.b) or 255
     
     local startY = scaledPos.y
     local scale = Menu.Scale or 1.0
